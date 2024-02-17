@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,54 +14,104 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
-    
+
 </head>
+
 <body class="font-raleway">
     <header class="w-4/5 mx-auto my-12">
         <!-- NAVIGATION BAR  -->
         <div class="navbar bg-base-100">
             <div class="navbar-start">
-              <div class="dropdown">
-                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a>Home</a></li>
+                        <li><a>About</a></li>
+                        <li><a>Destination</a></li>
+                        <li><a>Search</a></li>
+                    </ul>
                 </div>
-                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                <a class="btn btn-ghost text-4xl font-extrabold">P-Ticket</a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu text-xl menu-horizontal px-1">
                     <li><a>Home</a></li>
                     <li><a>About</a></li>
                     <li><a>Destination</a></li>
-                    <li><a>Search</a></li> 
+                    <li><a>Search</a></li>
                 </ul>
-              </div>
-              <a class="btn btn-ghost text-4xl font-extrabold">P-Ticket</a>
-            </div>
-            <div class="navbar-center hidden lg:flex">
-              <ul class="menu text-xl menu-horizontal px-1">
-                <li><a>Home</a></li>
-                <li><a>About</a></li>
-                <li><a>Destination</a></li>
-                <li><a>Search</a></li>
-              </ul>
             </div>
             <div class="navbar-end">
-              <a class="btn px-7 text-xl font-bold bg-[#1DD1001A] border-[#1DD10066] text-[#1DD100]">Bus 
-                <img src="./images/bus-icon.png" alt="">
-              </a>
+                <a class="btn px-7 text-xl font-bold bg-[#1DD1001A] border-[#1DD10066] text-[#1DD100]">Bus
+                    <img src="./images/bus-icon.png" alt="">
+                </a>
             </div>
-          </div>
-          <!-- banner  -->
-          <div class="hero min-h-screen rounded-[32px] lg:my-10" style="background-image: url(images/banner.png);">
+        </div>
+        <!-- banner  -->
+        <div class="hero lg:min-h-screen rounded-[32px] lg:my-10" style="background-image: url(images/banner.png);">
             <div class="hero-overlay rounded-[32px] bg-opacity-60"></div>
             <div class="hero-content text-center text-neutral-content">
-              <div class="lg:w-2/3">
-                <h1 class="mb-5 text-6xl font-bold">End-to-End Travel with <span class="text-[#1DD100] font-extrabold"> P Paribahan</span></h1>
-                <p class="mb-5">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined.</p>
-                <button class="btn bg-[#1DD100] text-black text-xl px-6 ">Buy Tickets</button>
-              </div>
+                <div class="lg:w-2/3">
+                    <h1 class="mb-5 text-5xl lg:text-6xl font-bold">End-to-End Travel with <span
+                            class="text-[#1DD100] font-extrabold"> P Paribahan</span></h1>
+                    <p class="mb-5">Yes, you can run unit tests and view the results directly within the app. The
+                        integrated testing features allow for a streamlined.</p>
+                    <button class="btn bg-[#1DD100] text-black text-xl px-6 ">Buy Tickets</button>
+                </div>
             </div>
-          </div>
+        </div>
+        <!-- coupon section  -->
+        <div class="lg:my-28 text-center">
+            <h1 class=" my-5 text-4xl text-[#030712] font-bold">Best offers for you</h1>
+            <!-- coupon container  -->
+            <div class="flex flex-col lg:my-12 lg:flex-row gap-6">
+                <!-- first coupon  -->
+                <div class="card lg:w-1/2 bg-[#FFBF0F] flex flex-row justify-between">
+                    <div class="flex flex-col w-1/2 justify-center items-center font-inter">
+                        <h1 class="text-[40px] font-extrabold text-[#030712CC]">15% OFF</h1>
+                        <p>on your next purchase</p>
+                        <p class="text-[#03071280]">use by January 2024</p>
+                    </div>
+                    <div>
+                        <img src="./images/cupon-devider.png" alt="">
+                    </div>
+                    <div class="flex flex-col w-1/2 justify-center items-center">
+                        <h1 class="text-[40px] font-extrabold text-[#030712CC]">NEW15</h1>
+                        <p class="text-[#03071280]">Coupon Code</p>
+                    </div>
+                </div>
+                <!-- second coupon  -->
+                <div class="card lg:w-1/2 bg-[#F78C9C] flex flex-row justify-between">
+                    <div class="flex flex-col w-1/2 justify-center items-center font-inter">
+                        <h1 class="text-[40px] font-extrabold text-[#030712CC]">20% OFF</h1>
+                        <p>on your next purchase</p>
+                        <p class="text-[#03071280]">use by January 2024</p>
+                    </div>
+                    <div>
+                        <img src="./images/cupon-devider.png" alt="">
+                    </div>
+                    <div class="flex flex-col w-1/2 justify-center items-center">
+                        <h1 class="text-[40px] font-extrabold text-[#030712CC]">Couple 20</h1>
+                        <p class="text-[#03071280]">Coupon Code</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-outline btn-success text-xl text-[#1DD100]">See All Offers</button>
+        </div>
+        </div>
+        </div>
     </header>
     <main></main>
     <footer></footer>
     <script src="./scripts/script.js"></script>
 </body>
+
 </html>
