@@ -21,18 +21,21 @@ let leftSeat=40;
 
 for (const seat of allSeats){
     seat.addEventListener("click",function(e){
-        seat.classList.add('bg-lime-500');
+        seat.classList.add('bg-lime-500','text-white');
         const seatData =seat.innerText;
         count=count+1;
         leftSeat=leftSeat-1;
-        document.getElementById("seatCount").innerText=count;
-        document.getElementById("leftSeatCount").innerText=leftSeat;
+        setInnerTextById("seatCount",count);
+        setInnerTextById("leftSeatCount",leftSeat);
         const priceTotal= 550*count;
-        document.getElementById("total").innerText=priceTotal;
+        setInnerTextById("total",priceTotal);
+        setInnerTextById("grandTotal",priceTotal);
 
+        const coupon=document.getElementById("coupon");
         handleSeatClick(seatData);
         if(count>=4){
             disableSeats(seat);
+            coupon.removeAttribute("disabled");
         }
 
     })

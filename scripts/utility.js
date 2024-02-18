@@ -4,3 +4,7 @@ function getValueById(elementId){
     const value=parseInt(elementValue);
     return value;
 }
+
+function setInnerTextById(elementId, value){
+    document.getElementById(elementId).innerText=value;
+}
