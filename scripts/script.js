@@ -36,10 +36,40 @@ for (const seat of allSeats){
         if(count>=4){
             disableSeats(seat);
             coupon.removeAttribute("disabled");
+            
+            const discountTr=document.getElementById("discountTr");
+            const applyBtn= document.getElementById("applyBtn");
+            applyBtn.addEventListener("click",function(e){
+                const couponValue=coupon.value;
+                if (couponValue== 'NEW15'){
+                    const discount15= 2200*0.15;
+                    setInnerTextById("discount",discount15);
+                    const finalPrice= 2200-discount15;
+                    setInnerTextById("grandTotal",finalPrice);
+                    coupon.classList.add("hidden");
+                    applyBtn.classList.add("hidden");
+                    discountTr.classList.remove("hidden");
+                }
+                else if(couponValue == 'Couple 20'){
+                    const discount20= 2200*0.20;
+                    setInnerTextById("discount",discount20);
+                    const finalPrice= 2200-discount20;
+                    setInnerTextById("grandTotal",finalPrice);
+                    coupon.classList.add("hidden");
+                    applyBtn.classList.add("hidden");
+                    discountTr.classList.remove("hidden");
+                }
+                else{
+                    alert('Wrong Coupon! Use a valid one.');
+                }
+            })
         }
 
     })
 }
+
+
+
 function disableSeats(){
     for (const seat of allSeats) {
         seat.setAttribute('disabled', 'disabled');
