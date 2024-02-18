@@ -1,7 +1,7 @@
 function scrollToMainSection(){
     const mainSection = document.getElementById('mainId');
 
-        // Scroll options for smooth behavior
+        // Scroll options
         const scrollOptions = {
             behavior: 'smooth',
             block: 'start',
@@ -31,6 +31,8 @@ for (const seat of allSeats){
         setInnerTextById("total",priceTotal);
         setInnerTextById("grandTotal",priceTotal);
 
+
+        // Coupon functionality 
         const coupon=document.getElementById("coupon");
         handleSeatClick(seatData);
         if(count>=4){
@@ -68,7 +70,21 @@ for (const seat of allSeats){
     })
 }
 
+// next button functionality 
 
+const phoneNumberInput = document.getElementById("number");
+const nextButton = document.getElementById("nextBtn");
+
+phoneNumberInput.addEventListener("input", function (e) {
+    const phoneNumberValue = phoneNumberInput.value.trim();
+
+    
+    if (phoneNumberValue !== "" && count>0) {
+        nextButton.removeAttribute("disabled");
+    } else {
+        nextButton.setAttribute("disabled", "disabled");
+    }
+});
 
 function disableSeats(){
     for (const seat of allSeats) {
@@ -76,16 +92,3 @@ function disableSeats(){
 }
 }
 
-function handleSeatClick(seatData) {
-    
-    const tableBody =document.getElementsByTagName('tbody')[0];
-    const newRow = tableBody.insertRow();
-
-    const cell1 = newRow.insertCell(0);
-    const cell2 = newRow.insertCell(1);
-    const cell3 = newRow.insertCell(2);
-
-    cell1.innerText = seatData;
-    cell2.innerText = 'Economy';
-    cell3.innerText = 550;
-} 

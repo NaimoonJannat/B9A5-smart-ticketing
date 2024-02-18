@@ -311,13 +311,13 @@
                     <div>
                         <form>
                             <p class="text-lg text-[#030712] font-semibold text-left my-4">Passenger Name*</p>
-                            <input type="text" placeholder="Enter your name" class="input input-bordered w-full" />
+                            <input id="name" type="text" placeholder="Enter your name" class="input input-bordered w-full" />
                             <p class="text-lg text-[#030712] font-semibold text-left my-4">Phone Number*</p>
-                            <input type="number" placeholder="Enter your phone number" class="input input-bordered w-full" />
+                            <input type="number" id="number" placeholder="Enter your phone number" class="input input-bordered w-full" />
                             <p class="text-lg text-[#030712] font-semibold text-left my-4">Email ID</p>
-                            <input type="email" placeholder="Enter your email id" class="input input-bordered w-full" />
+                            <input type="email" id="email" placeholder="Enter your email id" class="input input-bordered w-full" />
                             <!-- Modal  -->
-                            <button class="btn my-5 bg-[#1DD100] text-white text-xl w-full" onclick="event.preventDefault() ; my_modal_4.showModal()">Next</button>
+                            <button id="nextBtn" disabled class="btn my-5 bg-[#1DD100] text-white text-xl w-full" onclick="event.preventDefault() ; my_modal_4.showModal()">Next</button>
                             <dialog id="my_modal_4" class="modal">
                                 <div class="modal-box w-11/12 max-w-5xl">
                                     <div class="mx-auto w-1/3 border flex items-center">
