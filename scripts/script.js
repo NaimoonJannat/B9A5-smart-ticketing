@@ -36,9 +36,9 @@ for (const seat of allSeats){
         const coupon=document.getElementById("coupon");
         handleSeatClick(seatData);
         if(count>=4){
+            alert("You have reached the limit!");
             disableSeats(seat);
             coupon.removeAttribute("disabled");
-            
             const discountTr=document.getElementById("discountTr");
             const applyBtn= document.getElementById("applyBtn");
             applyBtn.addEventListener("click",function(e){
