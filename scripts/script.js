@@ -21,14 +21,24 @@ let leftSeat=40;
 
 for (const seat of allSeats){
     seat.addEventListener("click",function(e){
+        // changes the booked seat colors 
         seat.classList.add('bg-lime-500','text-white');
-        seat.removeEventListener("click", arguments.callee);
-        const seatData =seat.innerText;
-        count=count+1;
 
-        leftSeat=leftSeat-1;
+        // makes the clicked seats unclickable 
+        seat.removeEventListener("click", arguments.callee);
+
+        // sets the seat number for inserting them into table 
+        const seatData =seat.innerText;
+
+        // sets the seat count 
+        count=count+1;
         setInnerTextById("seatCount",count);
+
+        // sets the left seats 
+        leftSeat=leftSeat-1;
         setInnerTextById("leftSeatCount",leftSeat);
+
+        // calculates the price 
         const priceTotal= 550*count;
         setInnerTextById("total",priceTotal);
         setInnerTextById("grandTotal",priceTotal);
@@ -43,8 +53,11 @@ for (const seat of allSeats){
             coupon.removeAttribute("disabled");
             const discountTr=document.getElementById("discountTr");
             const applyBtn= document.getElementById("applyBtn");
+
             applyBtn.addEventListener("click",function(e){
                 const couponValue=coupon.value;
+
+                // calculation for 15% discount 
                 if (couponValue== 'NEW15'){
                     const discount15= 2200*0.15;
                     setInnerTextById("discount",discount15);
@@ -54,6 +67,7 @@ for (const seat of allSeats){
                     applyBtn.classList.add("hidden");
                     discountTr.classList.remove("hidden");
                 }
+                // calculation for 15% discount
                 else if(couponValue == 'Couple 20'){
                     const discount20= 2200*0.20;
                     setInnerTextById("discount",discount20);
