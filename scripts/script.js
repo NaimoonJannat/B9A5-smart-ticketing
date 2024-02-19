@@ -22,15 +22,17 @@ let leftSeat=40;
 for (const seat of allSeats){
     seat.addEventListener("click",function(e){
         seat.classList.add('bg-lime-500','text-white');
+        seat.removeEventListener("click", arguments.callee);
         const seatData =seat.innerText;
         count=count+1;
+
         leftSeat=leftSeat-1;
         setInnerTextById("seatCount",count);
         setInnerTextById("leftSeatCount",leftSeat);
         const priceTotal= 550*count;
         setInnerTextById("total",priceTotal);
         setInnerTextById("grandTotal",priceTotal);
-
+        
 
         // Coupon functionality 
         const coupon=document.getElementById("coupon");
@@ -88,7 +90,10 @@ phoneNumberInput.addEventListener("input", function (e) {
 
 function disableSeats(){
     for (const seat of allSeats) {
-        seat.setAttribute('disabled', 'disabled');
+        if(!seat.classList.contains('bg-lime-500')){
+            seat.setAttribute('disabled', 'disabled');
+        }
+        
 }
 }
 
